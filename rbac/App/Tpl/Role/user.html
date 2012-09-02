@@ -1,0 +1,52 @@
+{// 引入标签库 }
+<tagLib name="html" />
+{// 加载头部公共文件 }
+<include file="Public:header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+<import  file="Js.Form.MultiSelect" />
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title">组用户列表 [ <a href="__URL__">返 回</a> ]</div>
+<!--  功能组区域  -->
+<script language="JavaScript">
+<!--
+function saveAccess(){
+ThinkAjax.sendForm('form1','__URL__/setUser/');
+}
+function goType(type){
+	window.location = '?type='+type;
+}
+//-->
+</script>
+<div id="result" class="result none"></div>
+<form method=post id="form1">
+<table class="select" style="width:265px" ALIGN='center'><tr><td height="3" colspan="3" class="topTd" ></td></tr><tr><th class="tRight">当前组：<html:select name="groupId" change="location.href = '__URL__/user/id/'+this.options[this.selectedIndex].value;" first="选择组" style="medium" options="groupList" selected="selectGroupId" />
+</th></tr>
+<tr><td >
+<html:select name="groupUserId[]" id="sourceS" options="userList" selected="groupUserList"  multiple="true" style="multiSelect" size="15" />
+</td>
+</tr>
+<tr>
+<td  class="row tCenter" >
+<input type="button" onclick="allSelect()" value="全 选" class="submit  ">&nbsp;
+<input type="button" onclick="InverSelect()" value="反 选" class="submit  ">&nbsp;
+<input type="button" onclick="allUnSelect()" value="全 否" class="submit ">&nbsp;
+<input type="button" onclick="saveAccess()" value="保 存" class="submit ">&nbsp;
+<input type="hidden" name="groupId" VALUE="{$Think.get.id}" >
+<input type="hidden" name="ajax" VALUE="1">
+</td>
+</tr>
+<tr>
+<td height="3" class="bottomTd" >
+</td>
+</tr>
+</table>
+</form>
+</div>
+<!-- 主体内容结束 -->
+</div>
+<!-- 主页面结束 -->
+

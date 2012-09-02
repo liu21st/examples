@@ -1,0 +1,39 @@
+{// 引入标签库 }
+<tagLib name="html" />
+{// 加载头部公共文件 }
+<include file="Public:header" />
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title"> 分组列表</div>
+<!--  功能操作区域  -->
+<div class="operate" >
+<html:imageBtn name="add" value="新增" click="add()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="edit" value="编辑" click="edit()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="delete" value="删除" click="del()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="sort" value="排序" click="sort()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="sort" value="缓存" click="cache()" style="impBtn hMargin fLeft shadow" />
+<!-- 查询区域 -->
+<div class="fRig">
+<form method='post' action="__URL__">
+<div class="fLeft"><span id="key"><input type="text" title="名称查询" name="name" class="medium" ></span></div>
+<html:imageBtn type="submit" name="search" value="查询" style="impBtn hMargin fLeft shadow" />
+</div>
+</form>
+</div>
+<!-- 功能操作区域结束 -->
+
+<!-- 列表显示区域  -->
+<div class="list" >
+<div id="result" class="result none"></div>
+<html:list id="checkList" name="group" style="list" checkbox="true" action="true" datasource="list" show="id:编号|10%,name:名称:edit,title:说明,sort:排序,status|getStatus:状态" actionlist="status|showStatus=$group['id']" />
+</div>
+<!--  分页显示区域 -->
+<div class="page">{$page}</div>
+<!-- 列表显示区域结束 -->
+</div>
+<!-- 主体内容结束 -->
+</div>
+<!-- 主页面结束 -->
+

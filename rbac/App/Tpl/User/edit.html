@@ -1,0 +1,53 @@
+<include file="Public:header" />
+<div id="main" class="main" >
+<script language="JavaScript">
+<!--
+function resetPwd(){
+var pass	 =	 $F('resetPwd');
+ThinkAjax.send('__URL__/resetPwd/','ajax=1&id={$vo.id}&password='+encodeURIComponent(pass));
+}
+//-->
+</script>
+<div class="content">
+<div class="title">编辑帐号 [ <a href="__URL__">返回列表</a> ]</div>
+<table cellpadding=3 cellspacing=3>
+<tr>
+	<td class="tRight">重置密码：</td>
+	<td class="tLeft" ><input type="text" name="resetPwd" > <INPUT type="button" value="重置密码" onclick="resetPwd()" class="submit" style="height:25px"></td>
+</tr>
+<tr>
+	<td class="tRight" colspan="2"><hr></td>
+</tr>
+<form method='post' id="form1" >
+<tr>
+	<td class="tRight" >用户名：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeftRequire"  check='^\S+$' warning="用户名不能为空,且不能含有空格" name="account" value="{$vo.account}"></td>
+</tr>
+<tr>
+	<td class="tRight" >昵称：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeft" name="nickname" value="{$vo.nickname}"></td>
+</tr>
+
+<tr>
+	<td class="tRight">状态：</td>
+	<td class="tLeft"><SELECT class="small bLeft"  name="status">
+	<option <eq name="vo.status" value="1" >selected</eq> value="1">启用</option>
+	<option <eq name="vo.status" value="0" >selected</eq> value="0">禁用</option>
+	</SELECT></td>
+</tr>
+<tr>
+	<td class="tRight tTop">备  注：</td>
+	<td class="tLeft"><TEXTAREA class="large bLeft"  name="remark" rows="5" cols="57">{$vo.remark}</textarea></td>
+</tr>
+<tr>
+	<td></td>
+	<td class="center"><input type="hidden" name="id" value="{$vo.id}" >
+	<input type="hidden" name="ajax" value="1">
+	<input type="button" value="保 存" onclick="sendForm('form1','__URL__/update/')" class="small submit">
+	<input type="reset" class="submit  small" value="清 空" >
+	</td>
+</tr>
+</table>
+</form>
+</div>
+</div>

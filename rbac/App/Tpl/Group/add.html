@@ -1,0 +1,40 @@
+<include file="Public:header" />
+<div id="main" class="main" >
+<div class="content">
+<div class="title">新增分组 [ <a href="__URL__">返回列表</a> ]</div>
+<form method='post' id="form1" >
+<table cellpadding=3 cellspacing=3>
+<tr>
+	<td class="tRight" >名称：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeftRequire" check='^\S+$' warning="不能为空,且不能含有空格" name="name"></td>
+</tr>
+<tr>
+	<td class="tRight tTop">说明：</td>
+	<td class="tLeft"><input type="text" class="medium bLeftRequire"  name="title"></td>
+</tr>
+<tr>
+	<td class="tRight">显示：</td>
+	<td class="tLeft"><SELECT class="small bLeft" name="show">
+	<option value="1">是</option>
+	<option value="0">否</option>
+	</SELECT></td>
+</tr>
+<tr>
+	<td class="tRight">状态：</td>
+	<td class="tLeft"><SELECT class="small bLeft" name="status">
+	<option value="1">启用</option>
+	<option value="0">禁用</option>
+	</SELECT></td>
+</tr>
+<tr>
+	<td></td>
+	<td class="center">
+	<input type="hidden" name="ajax" value="1">
+	<div class="impBtn fLeft"><input type="button" value="保存" onclick="sendForm('form1','__URL__/insert/','tips')" class="save imgButton"></div>
+	<div class="impBtn fRig"><input type="reset" class="reset imgButton" value="清空" ></div>
+	</td>
+</tr>
+</table>
+</form>
+</div>
+</div>

@@ -1,0 +1,50 @@
+<tagLib name="html" />
+<include file="Public:header" />
+<load href ="__PUBLIC__/Js/common.js" />
+<div id="main" class="main" >
+<script language="JavaScript">
+<!--
+function checkName(){
+	ThinkAjax.send('__URL__/checkAccount/','ajax=1&account='+$F('account'));
+}
+//-->
+</script>
+<div class="content">
+<div class="title">新增后台用户 [ <a href="__URL__">返回列表</a> ]</div>
+<table cellpadding=3 cellspacing=3>
+<form method='post' id="form1" action="__URL__/insert/" >
+<tr>
+	<td class="tRight" >用户名：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeftRequire"  check='Require' warning="用户名不能为空" id="account" name="account" value="{$vo.account}"><input type="button" value="检测帐号" onclick="checkName()" class="submit hMargin"></td>
+</tr>
+<tr>
+	<td class="tRight" >密码：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeft" name="password" value=""></td>
+</tr>
+<tr>
+	<td class="tRight" >昵称：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeft" name="nickname" value=""></td>
+</tr>
+
+<tr>
+	<td class="tRight">状态：</td>
+	<td class="tLeft"><SELECT class="small bLeft"  name="status">
+	<option value="1">启用</option>
+	<option value="0">禁用</option>
+	</SELECT></td>
+</tr>
+<tr>
+	<td class="tRight tTop">备  注：</td>
+	<td class="tLeft"><TEXTAREA class="large bLeft"  name="remark" rows="5" cols="57"></textarea></td>
+</tr>
+<tr>
+	<td></td>
+	<td class="center">
+	<input type="submit" value="保 存" class="small submit">
+	<input type="reset" class="submit  small" value="清 空" >
+	</td>
+</tr>
+</table>
+</form>
+</div>
+</div>

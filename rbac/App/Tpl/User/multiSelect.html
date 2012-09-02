@@ -1,0 +1,45 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户挑选</title>
+<load href ="../Public/css/style.css" />
+<load href="../Public/js/Common.js" />
+<script language="JavaScript">
+<!--
+function ok(){
+	var result = new Array();
+	var obj	   = form1.userList.options;
+	for(var i=0;i<obj.length;i++){
+		result[i] = new Array();
+		result[i][0]	=	obj[i].text;
+		result[i][1]	=	obj[i].value;
+	}
+	returnValue=result;
+	window.close(); 
+}
+
+//-->
+</script>
+<base target="_self" />
+</head>
+
+<body style="margin:0;overflow:hidden">
+<form METHOD="POST" style="margin:0" name = "form1" action="">
+<div align="center">
+<div align="center"><table class="select"><tr><td height="5" colspan="3" class="topTd" ></td></tr><tr><Th width="44%" >系统用户列表</Th><Th ></Th><Th width="44%">选择用户列表</Th></tr><tr><td><div class="solid"><select id="sourceSelect" name="" ondblclick="addItem()" onchange="" multiple="multiple" class="multiSelect" size="16" ><volist name="list" id="vo">
+<option value="{$vo.id}">{$vo.nickname}</option></volist></select>
+</div></td><td valign="middle"><div style="margin-top:35px"><div class="impBtn vMargin fLeft " ><input type="button" id=""  name="" value="添加" onclick="addItem()" class="button"></div><div class="impBtn vMargin fLeft " ><input type="button" id=""  name="" value="全选" onclick="addAllItem()" class="button"></div><div class="impBtn vMargin fLeft " ><input type="button" id=""  name="" value="移除" onclick="delItem()" class="button"></div><div class="impBtn vMargin fLeft " ><input type="button" id=""  name="" value="全删" onclick="delAllItem()" class="button"></div></div></td>	<td><div class="solid"><select id="targetSelect" name="userList" ondblclick="delItem()" onchange="" multiple="multiple" class="multiSelect" size="16" ></select></div></td></tr>
+<tr><td colspan="3" class="tCenter"><div  style="width:65%;" ><html:imageBtn name="save" type="submit" value="保存" click="ok()" style="impBtn vMargin fLeft " /><html:imageBtn name="reset"  value="取消" click="window.close()" style="impBtn vMargin fRig " /></div></td></tr>
+<tr><td height="5" colspan="3" class="bottomTd" ></td></tr>
+</table>
+</div>
+<script language="JavaScript">
+<!--
+var selectSource = document.getElementById('sourceSelect').options;
+var selectTarget = document.getElementById('targetSelect').options;
+//-->
+</script>
+</form>
+</html>

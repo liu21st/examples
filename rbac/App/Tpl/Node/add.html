@@ -1,0 +1,50 @@
+<include file="Public:header" />
+<div id="main" class="main" >
+<div class="content">
+<div class="title"> 新增
+<eq name="level" value="1">应用</eq><eq name="level" value="2">模块</eq><eq name="level" value="3">操作</eq> [ <a href="__URL__">返回列表</a> ]</div>
+<form method='post'  id="form1" action="__URL__/insert/">
+<table cellpadding=3 cellspacing=3 >
+<tr>
+	<td class="tRight" ><eq name="level" value="1">应用</eq><eq name="level" value="2">模块</eq><eq name="level" value="3">操作</eq>名：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeftRequire"  check='Require' warning="<eq name="level" value="1">应用</eq><eq name="level" value="2">模块</eq><eq name="level" value="3">操作</eq>名称不能为空,且不能含有空格" name="name"></td>
+</tr>
+<tr>
+	<td class="tRight" >显示名：</td>
+	<td class="tLeft" ><input type="text" class="medium bLeftRequire" check='Require' warning="显示名称必须"  name="title"></td>
+</tr>
+<tr>
+	<td class="tRight" >分 组：</td>
+	<td class="tLeft" >
+	<SELECT class="medium bLeft" name="group_id">
+	<option value="">未分组</option>
+	<volist name="list" id="vo">
+	<option value="{$vo.id}">{$vo.title}</option>
+	</volist>
+	</SELECT>
+	</td>
+</tr>
+<tr>
+	<td class="tRight">状态：</td>
+	<td class="tLeft"><SELECT class="small bLeft"  name="status">
+	<option value="1">启用</option>
+	<option value="0">禁用</option>
+	</SELECT></td>
+</tr>
+<tr>
+	<td class="tRight tTop">描 述：</td>
+	<td class="tLeft"><TEXTAREA class="large bLeft" name="remark"  rows="5" cols="57"></textarea></td>
+</tr>
+<tr>
+	<td></td>
+	<td class="center"><div style="width:85%;margin:5px">
+	<input type="hidden" name="level" value="{$level}">
+	<input type="hidden" name="pid" value="{$pid}">
+	<div class="impBtn fLeft"><input type="submit" value="保存" class="save imgButton"></div>
+	<div class="impBtn fRig"><input type="reset" class="reset imgButton" value="清空" ></div>
+	</div></td>
+</tr>
+</table>
+</form>
+</div>
+</div>

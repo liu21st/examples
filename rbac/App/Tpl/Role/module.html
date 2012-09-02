@@ -1,0 +1,59 @@
+{// 引入标签库 }
+<tagLib name="html" />
+{// 加载头部公共文件 }
+<include file="Public:header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+<load  type="js" file="Js.Util.JTree" />
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title"> 模块授权  [ <a href="__URL__">返 回</a> ]</div>
+<!--  功能组区域  -->
+<script language="JavaScript">
+<!--
+function saveAccess(){
+ThinkAjax.sendForm('form1','__URL__/setModule/');
+}
+//-->
+</script>
+<div id="result" class="result none"></div>
+<import  file="Js.Form.MultiSelect" />
+<form method=post id="form1">
+<table class="select" style="width:265px" align="center">
+<tr><td height="3" colspan="3" class="topTd" ></td></tr>
+<tr><th class="tCenter"><a href="__URL__/app/groupId/{$Think.get.groupId}">应用授权</a> | 模块授权 | <a href="__URL__/action/groupId/{$Think.get.groupId}">操作授权</a>
+</th></tr>
+<tr><Td class="tRight">当前组：<html:select name="groupId" style="medium" change="location.href = '?groupId='+this.options[this.selectedIndex].value;" first="选择组" options="groupList" selected="selectGroupId" />
+</Td></tr>
+<tr><Td class="tRight">
+当前应用：<html:select name="appId"  style="medium" change="location.href = '?appId='+this.options[this.selectedIndex].value;" first="选择应用" options="appList" selected="selectAppId" />
+</Td></tr>
+<tr><td >
+<html:select id="groupModuleId" name="groupModuleId[]" options="moduleList" selected="groupModuleList"  multiple="true" style="multiSelect" size="15" />
+</td>
+</tr>
+<tr>
+<td  class="row tCenter" >
+<input type="button" onclick="allSelect()" value="全选" class="submit  ">&nbsp;
+<input type="button" onclick="InverSelect()" value="反选" class="submit  ">&nbsp;
+<input type="button" onclick="allUnSelect()" value="全否" class="submit ">&nbsp;
+<input type="button" onclick="saveAccess()" value="保存" class="submit  ">&nbsp;
+<input type="hidden" name="groupId" VALUE="{$Think.get.id}" >
+<input type="hidden" name="module" value="Node">
+<input type="hidden" name="ajax" VALUE="1">
+</td>
+</tr>
+<tr>
+<td height="3" class="bottomTd" >
+</td>
+</tr>
+</table>
+</form>
+
+</div>
+<!-- 主体内容结束 -->
+</div>
+<!-- 主页面结束 -->
+
