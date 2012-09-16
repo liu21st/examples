@@ -17,10 +17,10 @@
  </head>
  <body>
  <div class="main">
- <h2>ThinkPHP示例之：缩略图生成</h2>
+ <h2>ThinkPHP示例之：图片上传</h2>
 <notempty name="data"><img src="__UPLOAD__/m_{$data.image}" /> <img src="__UPLOAD__/s_{$data.image}" /></notempty>
 <form id="upload" method='post' action="__URL__/upload/" enctype="multipart/form-data">
-<div class="result" >上传允许文件类型：gif png jpg 图像文件，分别生产2张缩略图，其中大图带水印，并且把原图删掉。</div>
+<div class="result" >上传允许文件类型：gif png jpg 图像文件，并生成2张缩略图，其中大图带水印，生成后会删除原图。</div>
 <input name="image" id="image" type="file" />
 <input type="submit" value="提交" class="button" >
 </form>
