@@ -1,6 +1,6 @@
 <?php
 return array(
-    'URL_MODEL'         =>  3,
+    'URL_MODEL'         =>  1,
     'URL_PATHINFO_DEPR' =>  '/',
     'DB_TYPE'           =>  'mysql',
     'DB_HOST'           =>  'localhost',
