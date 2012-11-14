@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>ThinkPHP示例：独立分组</title>
+	<style type="text/css">
+	*{ padding: 0; margin: 0;font-size:16px; font-family: "微软雅黑"} 
+	div{ padding: 3px 20px;} 
+	body{ background: #fff; color: #333;}
+	h2{font-size:36px}
+	h3{font-size:36px;font-weight:normal}
+	a{text-decoration:none; color:#174B73; border-bottom:1px dashed gray}
+	a:hover{color:#F60; border-bottom:1px dashed gray}
+	div.result{border:1px solid #d4d4d4; background:#FFC;color:#393939; padding:8px 20px;float:auto;margin:2px}
+	</style>
+ </head>
+ <body>
+ <div class="main">
+ <h2>ThinkPHP示例：独立分组</h2>
+ <table cellpadding=2 cellspacing=2>
+  <tr>
+  <td></td>
+	<td><div id="list" >
+	<volist name="list" id="vo"><div id="div_{$vo.id}" class="result" style='font-weight:normal;<eq name="key%2" value="1">background:#ECECFF</eq>'><A href="{:U('read?id='.$vo['id'])}">{$vo.title}</A>  [{$vo.create_time|date='Y-m-d H:i:s',###}]
+	</div>
+	</volist></div>
+		<H3>[ <A href="{:U('Admin/Public/login')}">后台管理</a> ]</H3> 
+	</td>
+  </tr>
+ </table>
+</div>
+ </body>
+</html>
